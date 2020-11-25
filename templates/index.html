@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='assets/Logo.png') }}" type="image/gif" sizes="13x16">
+<title>Major Project</title>
+</head>
+
+<body>
+
+	<section class="container">
+		<div id="getfile">
+			<form action="getfile" method="POST" enctype="multipart/form-data">
+				<input type="file" name="myfile" accept=".pdf, .doc, .txt"><br><br>
+				<input type="submit" value="Submit">
+			</form>
+			<h2>Score: <span>{{ k }}</span></h2>
+		</div>
+		<br>
+		<div id="my_form">
+			<form action="submit" method="POST">
+				<textarea id="text" name="text" placeholder="Enter Text Here..." type="text"></textarea><br><br>
+				<input type="submit">
+			</form>
+		</div>
+	</section>
+</body>
+</html>
