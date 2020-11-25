@@ -8,23 +8,24 @@
 <title>Major Project</title>
 </head>
 
-<body>
+<body onload="bodyOnloadHandler()">
 
 	<section class="container">
 		<div id="getfile">
-			<form action="getfile" method="POST" enctype="multipart/form-data">
-				<input type="file" name="myfile" accept=".pdf, .doc, .txt"><br><br>
-				<input type="submit" value="Submit">
+			<form action="getfile" method="POST" enctype="multipart/form-data" onSubmit="return savefile();">
+				<input id="file" type="file" name="myfile" accept=".pdf, .doc, .txt"><br><br>
+				<input type="submit" value="Submit" id="subfile">
 			</form>
-			<h2>Score: <span>{{ k }}</span></h2>
+			<h2>Score: <span id="sp">{{ k }}</span></h2>
 		</div>
 		<br>
 		<div id="my_form">
-			<form action="submit" method="POST">
+			<form action="submit" method="POST" onSubmit="return savetext();">
 				<textarea id="text" name="text" placeholder="Enter Text Here..." type="text"></textarea><br><br>
-				<input type="submit">
+				<input type="submit" value="Submit" id="subtxt">
 			</form>
 		</div>
 	</section>
+	<script src="{{ url_for('static', filename='script/script.js') }}"></script>
 </body>
 </html>
