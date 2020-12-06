@@ -1,11 +1,18 @@
 // JavaScript Document
 document.getElementById("text").value = localStorage.getItem("comment");
 var sp = document.getElementById("sp");
+
+
 function bodyOnloadHandler(){ 
-	
 	"use strict";
+
+	
+	
 	if (window.location=='http://localhost:5000/'){
+		document.getElementById("erase").reset();
 		localStorage.setItem("comment", "");
+		alert(window.location);
+		
 	}
 	if (window.location=='http://localhost:5000/submit'){
 		if (document.getElementById("text").value==""){
